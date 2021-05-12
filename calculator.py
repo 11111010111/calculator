@@ -1,5 +1,7 @@
 # This is the horrid code to my calculator #
 # variables (theres not many here lol)
+import math
+
 history = []
 running = False
 operators = ["+", "-", "*", ".", "/", "**", "sqrt", "%", "<", "=", ">", "=/=", "//", "crt"]
@@ -132,66 +134,6 @@ def single_argument_check(operation):
     return second
 
 
-def the_actual_math(first, operation, second):
-    if operation == operators[0]:
-        result = float(first) + float(second)
-    elif operation == operators[1]:
-        result = float(first) - float(second)
-    elif operation == (operators[2]):
-        result = float(first) * float(second)
-    elif operation == operators[4]:
-        result = float(first) / float(second)
-    elif operation == "**":
-        result = float(first) ** float(second)
-    elif operation == "crt":
-        result = "currently broken sorry, i will fix this sometime"
-    elif operation == "sqrt":
-        result = "currently broken sorry, i will fix this sometime"
-    elif operation == "%":
-        result = float(first) % float(second)
-    elif operation == "//":
-        result = float(first) // float(second)
-    elif operation == "<":
-        if first < second:
-            result = True
-        else:
-            result = False
-        if result:
-            result = (first + " is indeed less than " + second)
-        else:
-            result = (first + " is not less than " + second)
-    elif operation == "=":
-        if first == second:
-            result = True
-        else:
-            result = False
-        if result:
-            result = (first + " is indeed equal to " + second)
-        else:
-            result = (first + " is not equal to " + second)
-    elif operation == ">":
-        if first > second:
-            result = True
-        else:
-            result = False
-        if result:
-            result = (first + " is indeed more than " + second)
-        else:
-            result = (first + " is not more than " + second)
-    elif operation == "=/=":
-        if first != second:
-            result = True
-        else:
-            result = False
-        if result:
-            result = (first + " is indeed not equal to " + second)
-        else:
-            result = (first + " is indeed equal to " + second)
-    else:
-        result = 0
-    return result
-
-
 def go():
     # getting first number / command
     first = get_first()
@@ -200,7 +142,7 @@ def go():
     # getting second number if operator is not "sqrt"
     second = single_argument_check(operation)
     # the math part
-    result = the_actual_math(first, operation, second)
+    result = math.the_actual_math(first, operation, second)
     # print the answer and store it
     print("The answer to your problem is")
     print(str(result))
