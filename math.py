@@ -1,61 +1,73 @@
 operators = ["+", "-", "*", ".", "/", "**", "sqrt", "%", "<", "=", ">", "=/=", "//", "crt"]
 
 
+def sqrt(a):
+    b = float(a) ** 0.5
+    return b
+
+
+def crt(a):
+    b = float(a) ** (1/3)
+    return b
+
+
 def the_actual_math(first, operation, second):
+    first = float(first)
+    second = float(second)
     if operation == operators[0]:
-        result = float(first) + float(second)
+        result = first + second
     elif operation == operators[1]:
-        result = float(first) - float(second)
+        result = first - second
     elif operation == (operators[2]):
-        result = float(first) * float(second)
+        result = first * second
     elif operation == operators[4]:
-        result = float(first) / float(second)
+        result = first / second
     elif operation == "**":
-        result = float(first) ** float(second)
+        result = first ** second
     elif operation == "crt":
-        result = "currently broken sorry, i will fix this sometime"
+        result = crt(first)
     elif operation == "sqrt":
-        result = "currently broken sorry, i will fix this sometime"
+        result = sqrt(first)
     elif operation == "%":
-        result = float(first) % float(second)
+        result = first % second
     elif operation == "//":
-        result = float(first) // float(second)
+        result = first // second
     elif operation == "<":
         if first < second:
             result = True
         else:
             result = False
         if result:
-            result = (first + " is indeed less than " + second)
+            result = (str(first) + " is indeed less than " + str(second))
         else:
-            result = (first + " is not less than " + second)
+            result = (str(first) + " is not less than " + str(second))
     elif operation == "=":
         if first == second:
             result = True
         else:
             result = False
         if result:
-            result = (first + " is indeed equal to " + second)
+            result = (str(first) + " is indeed equal to " + str(second))
         else:
-            result = (first + " is not equal to " + second)
+            result = (str(first) + " is not equal to " + str(second))
     elif operation == ">":
         if first > second:
             result = True
         else:
             result = False
         if result:
-            result = (first + " is indeed more than " + second)
+            result = (str(first) + " is indeed more than " + str(second))
         else:
-            result = (first + " is not more than " + second)
+            result = (str(first) + " is not more than " + str(second))
     elif operation == "=/=":
         if first != second:
             result = True
         else:
             result = False
         if result:
-            result = (first + " is indeed not equal to " + second)
+            result = (str(first) + " is indeed not equal to " + str(second))
         else:
-            result = (first + " is indeed equal to " + second)
+            result = (str(first) + " is indeed equal to " + str(second))
     else:
         result = 0
     return result
